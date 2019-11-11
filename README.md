@@ -4,7 +4,7 @@
 Test-driven development
 
 ## Description
-A simple supermarket that allows users to add items to basket (item, price), remove items, apply discounts (i.e. 20%) and special offers (i.e. 2 for 2)
+A simple supermarket that allows users to add items to basket (item, price), remove items, apply discounts (i.e. 20%) and special offers (i.e. 2 for 1)
 
 ## Purpose
 Familiarising myself with Python's unittest library
