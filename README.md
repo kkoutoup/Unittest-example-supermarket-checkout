@@ -1,15 +1,15 @@
 # Unittest Example - Supermarket Checkout
 
-## Category
+### Category
 Test-driven development
 
-## Description
+### Description
 A simple supermarket script that allows users to add items to basket (item, price), remove items, apply discounts (i.e. 20%) and special offers (i.e. 2 for 1)
 
-## Purpose
+### Purpose
 Familiarising myself with Python's unittest library
 
-## File structure
+### File structure
 Main file `checkout.py` that is being tested with `test_checkout.py`
 ```
 checkout.py
