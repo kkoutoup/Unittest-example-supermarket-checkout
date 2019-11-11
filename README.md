@@ -21,7 +21,7 @@ test_checkout.py
 Unittest module comes with Python standard library so none.
 
 ### Developed by
-Kostas Koutoupis ([@kkoutoup] (https://github.com/kkoutoup)), November 2019
+Kostas Koutoupis ([@kkoutoup](https://github.com/kkoutoup)), November 2019
 
 
 
