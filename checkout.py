@@ -13,7 +13,6 @@ class Checkout:
     def __init__(self):
         self.products = {}
         self.total = 0
-        self.discounted_items = ["bread", "fabric softener"]
 
     def add_item_price(self, item, price, quantity):
         if item == "" or type(item) != str:
