@@ -70,15 +70,3 @@ class Checkout:
                 self.products[item]['quantity']  = (self.products[item]['quantity']+1)/2
         else:
             raise CheckoutError("Offer can't be applied. Not enough items in basket")
-        
-        
-
-
-            
-
-
-
-    
-
-    
-     
