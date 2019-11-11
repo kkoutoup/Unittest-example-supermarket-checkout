@@ -35,12 +35,12 @@ class TestCheckout(unittest.TestCase):
         '''
         Should add items and prices
         '''
-        #add some items
+        # add some items
         self.checkout.add_item_price('bread', 2, 1)
         self.checkout.add_item_price('bread', 2, 1)
         self.checkout.add_item_price('milk', 1, 1)
 
-        #check values are added
+        # check values are added
         self.assertEqual(self.checkout.products, {'bread': {'price': 2, 'quantity': 2}, 'milk': {'price': 1, 'quantity': 1}})
         
     def test_remove_item_if_item_not_there(self):
@@ -54,12 +54,12 @@ class TestCheckout(unittest.TestCase):
         '''
         Check the correct remaining amount
         '''
-        #add item
+        # add item
         self.checkout.add_item_price('bread', 2, 2)
-        #remove item
+        # remove item
         self.checkout.remove_item('bread')
 
-        #check remaining amount
+        # check remaining amount
         self.assertEqual(self.checkout.products, {'bread': {'price': 2, 'quantity': 1}})
 
     def test_calculate_total_empty_basket(self):
@@ -74,13 +74,13 @@ class TestCheckout(unittest.TestCase):
         Test total is working properly
         '''
 
-        #add items
+        # add items
         self.checkout.add_item_price('bread', 2, 2)
         self.checkout.add_item_price('milk', 1, 1)
         self.checkout.add_item_price('honey', 4, 1)
         self.checkout.add_item_price('eggs', 2, 1)
 
-        #test total
+        # test total
         self.assertEqual(self.calculate_total(), 11)
 
     def test_apply_discount_wrong_type(self):
@@ -102,15 +102,15 @@ class TestCheckout(unittest.TestCase):
         Test discount is applied to items
         '''
         
-        #add items
+        # add items
         self.checkout.add_item_price('bread', 2, 1)
         self.checkout.add_item_price('honey', 4, 1)
         
-        #apply discount
+        # apply discount
         self.checkout.apply_discount('bread', 50)
         self.checkout.apply_discount('honey', 20)
         
-        #check discount is applied correctly
+        # check discount is applied correctly
         self.assertEqual(self.checkout.products['bread']['price'], 2-(2*50/100))
         self.assertEqual(self.checkout.products['honey']['price'], 4-(4*20/100))
 
@@ -125,7 +125,7 @@ class TestCheckout(unittest.TestCase):
         '''
         Raise exception if amount of items lower than necessary
         '''
-        #add items
+        # add items
         self.checkout.add_item_price('bread', 2, 1)
         
         with self.assertRaises(CheckoutError):
@@ -142,11 +142,11 @@ class TestCheckout(unittest.TestCase):
         '''
         Testing for even quantities
         '''
-        #add items
+        # add items
         self.checkout.add_item_price('bread', 2, 2)
         self.checkout.add_item_price('milk', 1, 4)
 
-        #test offer is applied
+        # test offer is applied
         self.checkout.apply_special_offer('bread', 2, 1)
         self.checkout.apply_special_offer('milk', 2, 1)
 
@@ -157,12 +157,12 @@ class TestCheckout(unittest.TestCase):
        '''
        Testing for odd quantities
        '''
-       #add items
+       # add items
        self.checkout.add_item_price('bread', 2, 3)
        self.checkout.add_item_price('milk', 1, 9)
        self.checkout.add_item_price('chewing gum', 1, 27)
 
-       #test offer is applied
+       # test offer is applied
        self.checkout.apply_special_offer('bread', 2, 1)
        self.checkout.apply_special_offer('milk', 2, 1)
        self.checkout.apply_special_offer('chewing gum', 2, 1)

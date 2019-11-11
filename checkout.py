@@ -34,7 +34,7 @@ class Checkout:
             raise CheckoutError("Item not found in your basket or not enough items")
 
     def calculate_total(self):
-        #reset total to 0
+        # reset total to 0
         self.total = 0
         
         if not self.products:
